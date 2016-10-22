@@ -1,6 +1,8 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+
 LOCAL_MODULE_TAGS := optional
 src_dirs:= src/org/codeaurora/bluetooth/hidtestapp \
 
@@ -16,5 +18,5 @@ LOCAL_MULTILIB:= 32
 
 include $(BUILD_PACKAGE)
 
-
 include $(call all-makefiles-under,$(LOCAL_PATH))
+endif # TARGET_BUILD_VARIANT = eng
